@@ -2,7 +2,7 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
-
+import cors from "cors";
 dotenv.config();
 console.log(process.env.MONGO_URL);
 
@@ -71,6 +71,7 @@ const flipkart = [
 ];
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/flipkart", async function (request, response) {
     const data= await client.db("scrap").collection("flipkart").find({}).toArray();
