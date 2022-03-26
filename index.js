@@ -9,7 +9,7 @@ console.log(process.env.MONGO_URL);
 
 const app = express();
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 //const MONGO_URL = "mongodb://localhost";
 const  MONGO_URL= process.env.MONGO_URL;
